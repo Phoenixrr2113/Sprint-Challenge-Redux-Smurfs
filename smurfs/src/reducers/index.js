@@ -6,11 +6,15 @@ import {
 	FETCHING_SMURF,
 	FETCHING_SMURF_SUCCESS,
 	FETCHING_SMURF_FAILURE,
+	ADDING_SMURF,
+	ADDING_SMURF_SUCCESS,
+	ADDING_SMURF_FAILURE,
 } from '../actions';
 
 const initialState = {
 	smurfs: [],
 	isFetching: false,
+	isAdding: false,
 	error: 'no errors yet.',
 };
 
@@ -33,6 +37,28 @@ const smurfReducer = (state = initialState, action) => {
 			return {
 				...state,
 				isFetching: false,
+				error: action.payload,
+			};
+		case ADDING_SMURF:
+			return {
+				...state,
+				isFetching: false,
+				isAdding: true,
+				error: 'no errors yet.',
+			};
+		case ADDING_SMURF_SUCCESS:
+			return {
+				...state,
+				smurfs: action.payload,
+				isFetching: false,
+				isAdding: false,
+				error: 'no errors yet.',
+			};
+		case ADDING_SMURF_FAILURE:
+			return {
+				...state,
+				isFetching: false,
+				isAdding: false,
 				error: action.payload,
 			};
 		default:

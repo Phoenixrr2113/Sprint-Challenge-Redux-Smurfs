@@ -10,22 +10,30 @@ import {
 
 const initialState = {
 	smurfs: [],
+	isFetching: false,
+	error: 'no errors yet.',
 };
 
 const smurfReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case FETCHING_SMURF:
-			console.log(action);
 			return {
 				...state,
+				isFetching: true,
+				error: 'no errors yet.',
 			};
 		case FETCHING_SMURF_SUCCESS:
 			return {
 				...state,
+				smurfs: [...state.smurfs, action.payload],
+				isFetching: false,
+				error: 'no errors yet.',
 			};
-		case FETCHING_SMURF:
+		case FETCHING_SMURF_FAILURE:
 			return {
 				...state,
+				isFetching: false,
+				error: action.payload,
 			};
 		default:
 			return state;
@@ -39,7 +47,7 @@ const smurfReducer = (state = initialState, action) => {
    addingSmurf: false
    updatingSmurf: false
    deletingSmurf: false
-   error: null
+   error: 'no erros yet.'
  }
 */
 

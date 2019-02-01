@@ -2,6 +2,35 @@
   Be sure to import in all of the action types from `../actions`
 */
 
+import {
+	FETCHING_SMURF,
+	FETCHING_SMURF_SUCCESS,
+	FETCHING_SMURF_FAILURE,
+} from '../actions';
+
+const initialState = {
+	smurfs: [],
+};
+
+const smurfReducer = (state = initialState, action) => {
+	switch (action.type) {
+		case FETCHING_SMURF:
+			console.log(action);
+			return {
+				...state,
+			};
+		case FETCHING_SMURF_SUCCESS:
+			return {
+				...state,
+			};
+		case FETCHING_SMURF:
+			return {
+				...state,
+			};
+		default:
+			return state;
+	}
+};
 /*
  Your initial/default state for this project could *Although does not have to* look a lot like this
  {
@@ -21,3 +50,5 @@
   There is no need for 'combineReducers' in this project.
   Components can then read your store as, `state` and not `state.fooReducer`.
 */
+
+export default smurfReducer;

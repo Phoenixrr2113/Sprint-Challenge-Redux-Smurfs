@@ -1,0 +1,22 @@
+.smurf-card {
+	text-align: center;
+	height: 20%;
+	padding: 15px;
+	width: auto;
+	border: 2px dashed salmon;
+	font-weight: bold;
+}
+span {
+	font-weight: 400;
+}
+
+.smurf-name {
+	padding-top: 10px;
+	font-size: 20px;
+}
+.smurf-age {
+	padding-top: 10px;
+}
+.smurf-height {
+	padding-top: 10px;
+}

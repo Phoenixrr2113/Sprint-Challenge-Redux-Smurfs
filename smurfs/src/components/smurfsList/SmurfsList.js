@@ -2,7 +2,6 @@ import React from 'react';
 import Smurf from '../smurfs/Smurfs';
 
 const SmurfsList = props => {
-	console.log(props);
 	return (
 		<div>
 			{props.smurfs.map(smurf => (
